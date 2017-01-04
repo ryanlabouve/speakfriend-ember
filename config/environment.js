@@ -45,7 +45,7 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-
+    ENV.API.host = 'https://speakfriend-api.herokuapp.com';
   }
 
   return ENV;
