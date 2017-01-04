@@ -1,0 +1,22 @@
+<table>
+  <tr>
+    <td>Snippets</td>
+    {{#each selectedLangs as |lang|}}
+      <td>
+        {{lang}}
+      </td>
+    {{/each}}
+  </tr>
+  {{#each content as |snippetRow|}}
+    <tr>
+      <td>
+        {{snippetRow.name}}
+      </td>
+      {{#each selectedLangs as |lang|}}
+        <td>
+          {{safe-string (get snippetRow.contentJSON lang)}}
+        </td>
+      {{/each}}
+    </tr>
+  {{/each}}
+</table>
