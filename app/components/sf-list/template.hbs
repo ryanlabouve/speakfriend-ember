@@ -1,4 +1,4 @@
-<table>
+<table class="f6">
   <tr>
     <td>Snippets</td>
     {{#each selectedLangs as |lang|}}
@@ -9,11 +9,11 @@
   </tr>
   {{#each content as |snippetRow|}}
     <tr>
-      <td>
+      <td class="bb pa1">
         {{snippetRow.name}}
       </td>
       {{#each selectedLangs as |lang|}}
-        <td>
+        <td class="bb pa1">
           {{safe-string (get snippetRow.contentJSON lang)}}
         </td>
       {{/each}}

@@ -1,3 +1,4 @@
+/* global hljs */
 import Ember from 'ember';
 import _ from 'lodash';
 
@@ -17,5 +18,13 @@ export default Ember.Component.extend({
   init() {
     this._super(...arguments);
     this.set('selectedLangs', this.get('availibleLangs'));
+  },
+
+  didInsertElement() {
+    Ember.run.later(() => {
+      this.$('pre code').each(function(i, block) {
+        hljs.highlightBlock(block);
+      });
+    });
   }
 });
